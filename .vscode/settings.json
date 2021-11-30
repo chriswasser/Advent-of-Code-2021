@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/Users/chris/.local/share/pyenv/versions/Advent-of-Code-2021@3.9.9/bin/python",
+    "python.formatting.provider": "black",
+}
