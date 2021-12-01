@@ -5,8 +5,8 @@ Repository for my solutions to the [Advent of Code 2021](https://adventofcode.co
 ## Progress
 
 | Day | Task 1 | Task 2 |
-| --- | ------ | ------ |
-|   1 |        |        |
+| --: | :----: | :----: |
+|   1 |      ✓ |      ✓ |
 |   2 |        |        |
 |   3 |        |        |
 |   4 |        |        |
