@@ -14,11 +14,10 @@ def solve_task1():
     for line in fileinput.input():
         positions = np.array([int(position) for position in line.rstrip().split(",")], dtype=np.int64)
 
-    min_fuel, min_alignment = 10000000000, -1
+    min_fuel = np.sum(positions)
     for alignment in range(max(positions)):
         fuel = np.sum(np.abs(alignment - positions))
-        if fuel < min_fuel:
-            min_fuel, min_alignment = fuel, alignment
+        min_fuel = min(fuel, min_fuel)
     solution = min_fuel
     print(f"answer to task 1: {solution}")
 
@@ -32,11 +31,11 @@ def solve_task2():
     for line in fileinput.input():
         positions = np.array([int(position) for position in line.rstrip().split(",")], dtype=np.int64)
 
-    min_fuel, min_alignment = 10000000000, -1
+    min_fuel = np.sum(positions * (positions + 1) // 2)
     for alignment in range(max(positions)):
-        fuel = np.sum(np.array([sum(range(diff + 1)) for diff in np.abs(alignment - positions)], dtype=np.int64))
-        if fuel < min_fuel:
-            min_fuel, min_alignment = fuel, alignment
+        diffs = np.abs(alignment - positions)
+        fuel = np.sum(diffs * (diffs + 1) // 2)
+        min_fuel = min(fuel, min_fuel)
     solution = min_fuel
     print(f"answer to task 2: {solution}")
 
